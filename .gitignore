@@ -24,6 +24,7 @@
 *.la
 *.a
 *.lib
+.idea/
 
 # Executables
 *.exe
@@ -70,7 +71,7 @@ Saved/**/*.log
 Saved/**/*.json
 Saved/*.png
 Saved/Autosaves/*
-
+Saved/
 # Compiled source files for the engine to use
 Intermediate/*
 Plugins/*/Intermediate/*
