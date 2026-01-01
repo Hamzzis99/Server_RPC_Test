@@ -61,3 +61,12 @@ void AABPlayerController::BeginPlay()
 	FInputModeGameOnly GameOnlyInputMode;
 	SetInputMode(GameOnlyInputMode);
 }
+
+void AABPlayerController::OnPossess(APawn* InPawn)
+{
+	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin")); // 비긴 플레이가 실행되기 전에 이게 왜 나와?
+	
+	Super::OnPossess(InPawn);
+	
+	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
+}

@@ -8,6 +8,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "ABCharacterControlData.h"
+#include "ArenaBattle.h"
 #include "UI/ABHUDWidget.h"
 #include "CharacterStat/ABCharacterStatComponent.h"
 #include "Interface/ABGameInterface.h"
@@ -87,6 +88,38 @@ void AABCharacterPlayer::SetDead()
 		DisableInput(PlayerController);
 	}
 }
+
+//멀티플레이 과정 캐릭터 빙의 보이기.
+void AABCharacterPlayer::PossessedBy(AController* NewController)
+{
+	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin")); // 비긴 플레이가 실행되기 전에 이게 왜 나와?
+	AActor* OwnerActor = GetOwner();
+	if (OwnerActor)
+	{
+		AB_LOG(LogABNetwork, Log, TEXT("Owner : %s"), *OwnerActor->GetName());
+	}
+	else
+	{
+		AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("No Owner"));
+	}
+	
+	Super::PossessedBy(NewController);
+	
+	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin")); // 비긴 플레이가 실행되기 전에 이게 왜 나와?
+	OwnerActor = GetOwner();
+	if (OwnerActor)
+	{
+		AB_LOG(LogABNetwork, Log, TEXT("Owner : %s"), *OwnerActor->GetName());
+	}
+	else
+	{
+		AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("No Owner"));
+	}
+	
+	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
+}
+
+
 
 void AABCharacterPlayer::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {

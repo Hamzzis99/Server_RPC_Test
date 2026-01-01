@@ -87,7 +87,7 @@ void AABGameMode::PostLogin(class APlayerController* NewPlayer)
 // 로그인 관련 함수들
 void AABGameMode::StartPlay() // 이게 없으면 시작이 안 되지. (로비 로드 느낌 나게 하는 것)
 {
-	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin"));
-	Super::StartPlay(); 
-	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
+	//AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin"));
+	//Super::StartPlay(); 
+	//AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
 }

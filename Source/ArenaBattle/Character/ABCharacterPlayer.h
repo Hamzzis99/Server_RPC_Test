@@ -22,7 +22,8 @@ public:
 protected:
 	virtual void BeginPlay() override;
 	virtual void SetDead() override;
-
+	virtual void PossessedBy(AController* NewController) override; // 빙의 과정. (Posses) <- 여기에 나온 함수
+	
 public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
