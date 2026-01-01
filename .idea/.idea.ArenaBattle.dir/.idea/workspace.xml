@@ -9,8 +9,108 @@
   <component name="ChangeListManager">
     <list default="true" id="e444a58e-72dd-4f0b-8153-77bda262d49e" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ArenaBattle.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ArenaBattle.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ArenaBattle/Animation/ABP_ABCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ArenaBattle/Animation/ABP_ABCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/Config/WindowsEditor/EditorPerProjectUserSettings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Config/WindowsEditor/EditorPerProjectUserSettings.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/data_0" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/data_0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/data_1" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/data_1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/data_2" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/data_2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/data_3" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Cache/Cache_Data/data_3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Code Cache/js/index-dir/the-real-index" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Code Cache/js/index-dir/the-real-index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/DIPS" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/DIPS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/History" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/History" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Local Storage/leveldb/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Local Storage/leveldb/LOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Network/Cookies" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Network/Cookies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Network/Network Persistent State" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Network/Network Persistent State" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Network/TransportSecurity" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Network/TransportSecurity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Preferences" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Preferences" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Session Storage/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Session Storage/LOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Default/Site Characteristics Database/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Default/Site Characteristics Database/LOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Local State" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Local State" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/Variations" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/Variations" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/first_party_sets.db" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/first_party_sets.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/segmentation_platform/ukm_db" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/segmentation_platform/ukm_db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/webcache_6613/segmentation_platform/ukm_db-journal" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/webcache_6613/segmentation_platform/ukm_db-journal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle.Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle.Target.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/AI/ABAI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/AI/ABAI.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/AI/ABAIController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/AI/ABAIController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/AI/ABAIController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/AI/ABAIController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTDecorator_AttackInRange.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTDecorator_AttackInRange.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTDecorator_AttackInRange.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTDecorator_AttackInRange.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTService_Detect.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTService_Detect.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTService_Detect.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTService_Detect.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTTask_Attack.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTTask_Attack.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTTask_Attack.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTTask_Attack.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTTask_FindPatrolPos.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTTask_FindPatrolPos.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTTask_FindPatrolPos.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTTask_FindPatrolPos.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTTask_TurnToTarget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTTask_TurnToTarget.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTTask_TurnToTarget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/AI/BTTask_TurnToTarget.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Animation/ABAnimInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Animation/ABAnimInstance.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Animation/ABAnimInstance.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Animation/ABAnimInstance.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Animation/AnimNotify_AttackHitCheck.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Animation/AnimNotify_AttackHitCheck.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Animation/AnimNotify_AttackHitCheck.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Animation/AnimNotify_AttackHitCheck.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/ArenaBattle.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/ArenaBattle.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/ArenaBattle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/ArenaBattle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/ArenaBattle.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/ArenaBattle.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterControlData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterControlData.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterControlData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterControlData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterNonPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterNonPlayer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterNonPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterNonPlayer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterPlayer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABCharacterPlayer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABComboActionData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABComboActionData.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABComboActionData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Character/ABComboActionData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/CharacterStat/ABCharacterStatComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/CharacterStat/ABCharacterStatComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/CharacterStat/ABCharacterStatComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/CharacterStat/ABCharacterStatComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Game/ABGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Game/ABGameMode.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Game/ABGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Game/ABGameMode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/GameData/ABCharacterStat.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/GameData/ABCharacterStat.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/GameData/ABGameSingleton.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/GameData/ABGameSingleton.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/GameData/ABGameSingleton.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/GameData/ABGameSingleton.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Gimmick/ABStageGimmick.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Gimmick/ABStageGimmick.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Gimmick/ABStageGimmick.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Gimmick/ABStageGimmick.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABAnimationAttackInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABAnimationAttackInterface.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABAnimationAttackInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABAnimationAttackInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterAIInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterAIInterface.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterAIInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterAIInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterHUDInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterHUDInterface.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterHUDInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterHUDInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterItemInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterItemInterface.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterItemInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterItemInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterWidgetInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterWidgetInterface.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterWidgetInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABCharacterWidgetInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABGameInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABGameInterface.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABGameInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Interface/ABGameInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABItemBox.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABItemBox.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABItemBox.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABItemBox.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABItemData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABItemData.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABItemData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABItemData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABItems.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABItems.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABPotionItemData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABPotionItemData.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABPotionItemData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABPotionItemData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABScrollItemData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABScrollItemData.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABScrollItemData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABScrollItemData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABWeaponItemData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABWeaponItemData.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABWeaponItemData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Item/ABWeaponItemData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Physics/ABCollision.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Physics/ABCollision.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Player/ABPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Player/ABPlayerController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Player/ABPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Player/ABPlayerController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Player/ABSaveGame.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Player/ABSaveGame.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Player/ABSaveGame.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Player/ABSaveGame.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Prop/ABFountain.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Prop/ABFountain.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/Prop/ABFountain.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/Prop/ABFountain.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABCharacterStatWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABCharacterStatWidget.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABCharacterStatWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABCharacterStatWidget.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABHUDWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABHUDWidget.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABHUDWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABHUDWidget.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABHpBarWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABHpBarWidget.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABHpBarWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABHpBarWidget.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABUserWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABUserWidget.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABUserWidget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABUserWidget.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABWidgetComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABWidgetComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABWidgetComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattle/UI/ABWidgetComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ArenaBattleEditor.Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ArenaBattleEditor.Target.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +136,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://C:/Program Files/Epic Games/UE_5.7/Engine/Source/Runtime/Engine/Classes/Engine/Engine.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Epic Games/UE_5.7/Engine/Source/Runtime/Engine/Private/World.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Capston_Project/Helluna/Helluna.uproject" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -55,24 +156,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Uproject.ArenaBattle.executor": "Run",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Uproject.ArenaBattle.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="ArenaBattle" type="Uproject" factoryName="rider.uproject">
       <configuration_1 setup="1">
@@ -158,7 +259,12 @@
       <workItem from="1767136355013" duration="71000" />
       <workItem from="1767197192615" duration="8422000" />
       <workItem from="1767222798623" duration="30000" />
-      <workItem from="1767241875070" duration="5347000" />
+      <workItem from="1767241875070" duration="8503000" />
+      <workItem from="1767253793503" duration="111000" />
+      <workItem from="1767254010927" duration="173000" />
+      <workItem from="1767254232985" duration="4000" />
+      <workItem from="1767285014252" duration="2000" />
+      <workItem from="1767287873981" duration="1937000" />
     </task>
     <servers />
   </component>
