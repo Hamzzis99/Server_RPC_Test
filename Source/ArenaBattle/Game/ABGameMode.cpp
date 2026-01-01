@@ -59,6 +59,7 @@ void AABGameMode::PostLogin(class APlayerController* NewPlayer)
 	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin"));
 	
 	Super::PostLogin(NewPlayer);
+	
 	UNetDriver* NetDriver = GetNetDriver();
 	
 	if (NetDriver)

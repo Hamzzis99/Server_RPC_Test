@@ -33,6 +33,20 @@ void AABPlayerController::PostNetInit() // 원격 클라이언트로 초기화�
 	
 	Super::PostNetInit(); // 상위 클래스에 있는 대부분의 로직? 코딩 방식이 이상한데? 아, 오버라이드지 당연히 Super::니까
 
+	UNetDriver* NetDriver = GetNetDriver();
+	
+	if (NetDriver)
+	{
+		if (NetDriver -> ServerConnection)
+		{
+			AB_LOG(LogABNetwork, Log, TEXT("Server Connection(서버 커넥션): %s"), *NetDriver->ServerConnection->GetName());
+		}
+	}
+	else
+	{
+		AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("No NetDriver (넷드라이바 존재 없음)"));
+	}
+	
 	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
 }
 
