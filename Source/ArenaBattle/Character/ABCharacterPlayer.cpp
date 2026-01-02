@@ -90,9 +90,10 @@ void AABCharacterPlayer::SetDead()
 }
 
 //멀티플레이 과정 캐릭터 빙의 보이기.
+// 출력 예시 : LogABNetwork: [LISTENSERVER] AABCharacterPlayer::PossessedBy Owner : BP_ABPlayerController_C_0
 void AABCharacterPlayer::PossessedBy(AController* NewController)
 {
-	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin")); // 비긴 플레이가 실행되기 전에 이게 왜 나와?
+	AB_LOG(LogABNetwork, Log, TEXT("%s %s"), TEXT("Begin"), *GetName());
 	AActor* OwnerActor = GetOwner();
 	if (OwnerActor)
 	{
@@ -102,10 +103,9 @@ void AABCharacterPlayer::PossessedBy(AController* NewController)
 	{
 		AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("No Owner"));
 	}
-	
+
 	Super::PossessedBy(NewController);
-	
-	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin")); // 비긴 플레이가 실행되기 전에 이게 왜 나와?
+
 	OwnerActor = GetOwner();
 	if (OwnerActor)
 	{
@@ -115,10 +115,28 @@ void AABCharacterPlayer::PossessedBy(AController* NewController)
 	{
 		AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("No Owner"));
 	}
-	
-	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
+
+	AB_LOG(LogABNetwork, Log, TEXT("%s %s"), TEXT("End"), *GetName());
+
 }
 
+void AABCharacterPlayer::OnRep_Owner()
+{
+	AB_LOG(LogABNetwork, Log, TEXT("%s %s"), *GetName(), TEXT("Begin"));
+
+	Super::OnRep_Owner();
+
+	AB_LOG(LogABNetwork, Log, TEXT("%s %s"), TEXT("End"), *GetName());
+}
+
+void AABCharacterPlayer::PostNetInit()
+{
+	AB_LOG(LogABNetwork, Log, TEXT("%s %s"), TEXT("Begin"), *GetName());
+
+	Super::PostNetInit();
+
+	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
+}
 
 
 void AABCharacterPlayer::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)

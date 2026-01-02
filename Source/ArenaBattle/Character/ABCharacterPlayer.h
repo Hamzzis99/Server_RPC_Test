@@ -21,8 +21,11 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+	virtual void PossessedBy(AController* NewController) override; // 빙의 과정. (Posses) <- 여기에 나온 함수 (클라이언트에선 호출이 되지 않는다?)
+	virtual void OnRep_Owner() override; // 소유자가 변경되었을 때 호출되는 함수.
+	virtual void PostNetInit() override; // 원격 클라이언트로 초기화에 필요한 정보를 초기화 할 때 호출되는 것.
+	
 	virtual void SetDead() override;
-	virtual void PossessedBy(AController* NewController) override; // 빙의 과정. (Posses) <- 여기에 나온 함수
 	
 public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
