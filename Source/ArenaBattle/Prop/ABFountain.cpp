@@ -33,6 +33,7 @@ AABFountain::AABFountain()
 	}
 	
 	bReplicates = true; // 멀티플레이 액터 복제 설정
+	NetUpdateFrequency = 1.0f; // 네트워크 업데이트 빈도 설정 (초당 10회) (작을수록 좋은 것.) 프레임이 끊겨보이는거 (틱마다인데 확실히 보인다.)
 }
 
 // Called when the game starts or when spawned
@@ -58,8 +59,8 @@ void AABFountain::Tick(float DeltaTime)
 	
 	if (HasAuthority()) // 클라와 서버를 분리하는 함수. 다만 데디 서버일경우는 서버 로직만 구현하면 되니 만들지 않아도 됨.
 	{
-		// AddActorLocalRotation(FRotator(0.0f, RotationRate * DeltaTime, 0.0f));
-		// ServerRotationYaw = RootComponent->GetComponentRotation().Yaw;
+		AddActorLocalRotation(FRotator(0.0f, RotationRate * DeltaTime, 0.0f));
+		ServerRotationYaw = RootComponent->GetComponentRotation().Yaw;
 	}
 	// else // 클라이언트에서는 서버에서 전달받은 회전값으로 회전 처리 (매 틱마다 받는 것이기 때문에 OnRep_ServerRotationYaw에다가 선언하면 필요한만큼 가능)
 	// {
