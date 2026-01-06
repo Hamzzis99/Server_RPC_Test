@@ -42,15 +42,16 @@ void AABFountain::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	// if (HasAuthority()) // 블루프린트 HasAuthority는 이렇게 구현해도 된다.
-	// {
-	// 	FTimerHandle Handle;
-	// 	GetWorld()->GetTimerManager().SetTimer(Handle, FTimerDelegate::CreateLambda([&]
-	// 	{
-	// 		ServerRotationYaw += 10.0f; // 서버에다 얼마나 더 값을 더할지..
-	// 	}
-	// 		), 1.0f, true, 0.0f);
-	// }
+	if (HasAuthority()) // 블루프린트 HasAuthority는 이렇게 구현해도 된다.
+	{
+		FTimerHandle Handle;
+		GetWorld()->GetTimerManager().SetTimer(Handle, FTimerDelegate::CreateLambda([&]
+		{
+			BigData.Init(BigDataElement, 1000);
+			BigDataElement += 1.0f;
+		}
+			), 1.0f, true, 0.0f);
+	}
 }
 
 // Called every frame
@@ -95,6 +96,7 @@ void AABFountain::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifet
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 	
 	DOREPLIFETIME(AABFountain, ServerRotationYaw); // ServerRotationYaw 변수를 복제 대상으로 지정 (프로퍼티 리플리케이션 활성화 방법?) GetLifetimeReplicatedProps의 함수.
+	DOREPLIFETIME(AABFountain, BigData); // BigData 변수를 복제 대상으로 지정 (프로퍼티 리플리케이션 활성화 방법?) GetLifetimeReplicatedProps의 함수.
 }
 
 void AABFountain::OnActorChannelOpen(class FInBunch& InBunch, class UNetConnection* Connection) // Connection에서 Bunch정보를 해석해 어떤 리플리 케이션을 작업하여 수행하는지 알려주는 것. (서버와의 포탈이 열렸다?)

@@ -39,12 +39,15 @@ public:
 	UPROPERTY(ReplicatedUsing = OnRep_ServerRotationYaw) // Replicated를 Tick마다가 아닌 필요할 때마다 호출
 	float ServerRotationYaw; // 분수대 회전값을 서버-클라이언트 간 동기화할 변수 (OnRep_ServerRotationYaw 함수에 따라 동기화)
 	
+	
+	UPROPERTY(Replicated) // Replicated를 달아야 서버-클라이언트 간 동기화가 이루어짐
+	TArray<float> BigData; // 대용량 데이터 예시 변수 (의도적인 고ㅓㅏ부화)
+	
 	UFUNCTION() // 언리얼에서 인식할 수 있는 Function 
 	void OnRep_ServerRotationYaw(); // RepNotify 콜백 함수 선언
 	
 	float RotationRate = 30.f; // 분수대 회전 속도
 	float ClientTimeSinceUpdate = 0.0f; // 클라이언트가 서버로부터 마지막으로 업데이트된 이후 경과한 시간
 	float ClientTimeBetweenLastUpdate = 0.0f; // 클라이언트가 서버로부터 데이터를 받고 그 다음 데이터를 받았을 때 걸린 시간.
-	
-	//액터 리플리케이션을 하려면 채널을 지정해야 하는데...
+	float BigDataElement = 0.0f; // 대용량 데이터 예시 변수 (의도적인 과부화)
 };
