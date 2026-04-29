@@ -2,10 +2,10 @@
 
 
 #include "Prop/ABFountain.h"
-
-#include "ArenaBattle.h"
 #include "Components/StaticMeshComponent.h"
+#include "Components/PointLightComponent.h"
 #include "Net/UnrealNetwork.h"
+#include "ArenaBattle.h"
 
 // Sets default values
 AABFountain::AABFountain()
@@ -31,10 +31,11 @@ AABFountain::AABFountain()
 	{
 		Water->SetStaticMesh(WaterMeshRef.Object);
 	}
-	
-	bReplicates = true; // 멀티플레이 액터 복제 설정
-	NetUpdateFrequency = 1.0f; // 네트워크 업데이트 빈도 설정 (초당 10회) (작을수록 좋은 것.) 프레임이 끊겨보이는거 (틱마다인데 확실히 보인다.)
-	NetCullDistanceSquared = 4000000.0f; // 네트워크 컬링 거리 설정 (2000 유닛)
+
+	bReplicates = true;
+	NetUpdateFrequency = 1.0f;
+	NetCullDistanceSquared = 4000000.0f;
+	//NetDormancy = DORM_Initial;
 }
 
 // Called when the game starts or when spawned
@@ -42,15 +43,24 @@ void AABFountain::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	if (HasAuthority()) // 블루프린트 HasAuthority는 이렇게 구현해도 된다.
+	if (HasAuthority())
 	{
 		FTimerHandle Handle;
 		GetWorld()->GetTimerManager().SetTimer(Handle, FTimerDelegate::CreateLambda([&]
-		{
-			BigData.Init(BigDataElement, 1000);
-			BigDataElement += 1.0f;
-		}
-			), 1.0f, true, 0.0f);
+			{
+				//BigData.Init(BigDataElement, 1000);
+				//BigDataElement += 1.0;
+				ServerLightColor = FLinearColor(FMath::RandRange(0.0f, 1.0f), FMath::RandRange(0.0f, 1.0f), FMath::RandRange(0.0f, 1.0f), 1.0f);
+				OnRep_ServerLightColor();
+			}
+		), 1.0f, true, 0.0f);
+
+		FTimerHandle Handle2;
+		GetWorld()->GetTimerManager().SetTimer(Handle2, FTimerDelegate::CreateLambda([&]
+			{
+				//FlushNetDormancy();
+			}
+		), 10.0f, false, -1.0f);
 	}
 }
 
@@ -58,76 +68,88 @@ void AABFountain::BeginPlay()
 void AABFountain::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	
-	if (HasAuthority()) // 클라와 서버를 분리하는 함수. 다만 데디 서버일경우는 서버 로직만 구현하면 되니 만들지 않아도 됨.
+
+	if (HasAuthority())
 	{
 		AddActorLocalRotation(FRotator(0.0f, RotationRate * DeltaTime, 0.0f));
 		ServerRotationYaw = RootComponent->GetComponentRotation().Yaw;
 	}
-	// else // 클라이언트에서는 서버에서 전달받은 회전값으로 회전 처리 (매 틱마다 받는 것이기 때문에 OnRep_ServerRotationYaw에다가 선언하면 필요한만큼 가능)
-	// {
-	// 	FRotator NewRotator = RootComponent->GetComponentRotation();
-	// 	NewRotator.Yaw = ServerRotationYaw;
-	// 	RootComponent->SetWorldRotation(NewRotator);
-	// }
 	else
 	{
-		ClientTimeSinceUpdate += DeltaTime; // 마지막 업데이트 이후 경과한 시간 누적
-		if (ClientTimeBetweenLastUpdate < KINDA_SMALL_NUMBER) // 이전 업데이트 간격이 너무 작으면 보간하지 않음
+		ClientTimeSinceUpdate += DeltaTime;
+		if (ClientTimeBetweenLastUpdate < KINDA_SMALL_NUMBER)
 		{
-			return; // 0으로 나누는 상황 방지
+			return;
 		}
-		
-		// 서버로부터 받은 회전값에 다음 예상 회전값 계산 (이렇게 하면 서버에 대한 부담이 없다???) 아무튼 클라이언트내에서 보정해주는 값들.
-		// 진짜 이건 너무 중요하다. 분수대가 도는 회전값을 통해 만드는 것.
-		const float EstimateRotationYaw = ServerRotationYaw + RotationRate * ClientTimeBetweenLastUpdate; 
-		const float LerpRatio = ClientTimeSinceUpdate / ClientTimeBetweenLastUpdate; // 보간 비율 계산
-		
-		FRotator ClientRotator = RootComponent->GetComponentRotation(); // 현재 클라이언트 회전값
-		const float ClientNewYaw = FMath::Lerp(ServerRotationYaw, EstimateRotationYaw, LerpRatio); // 선형 보간을 통해 새로운 Yaw 값 계산
-		ClientRotator.Yaw = ClientNewYaw; // 보간된 Yaw 값 설정
-		RootComponent->SetWorldRotation(ClientRotator); // 회전값 적용
+
+		const float EstimateRotationYaw = ServerRotationYaw + RotationRate * ClientTimeBetweenLastUpdate;
+		const float LerpRatio = ClientTimeSinceUpdate / ClientTimeBetweenLastUpdate;
+
+		FRotator ClientRotator = RootComponent->GetComponentRotation();
+		const float ClientNewYaw = FMath::Lerp(ServerRotationYaw, EstimateRotationYaw, LerpRatio);
+		ClientRotator.Yaw = ClientNewYaw;
+		RootComponent->SetWorldRotation(ClientRotator);
 	}
 }
-	
-// 멀티플레이어 환경에서 변수 복제를 위한 함수 재정의
+
 void AABFountain::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-	
-	DOREPLIFETIME(AABFountain, ServerRotationYaw); // ServerRotationYaw 변수를 복제 대상으로 지정 (프로퍼티 리플리케이션 활성화 방법?) GetLifetimeReplicatedProps의 함수.
-	DOREPLIFETIME(AABFountain, BigData); // BigData 변수를 복제 대상으로 지정 (프로퍼티 리플리케이션 활성화 방법?) GetLifetimeReplicatedProps의 함수.
+
+	DOREPLIFETIME(AABFountain, ServerRotationYaw);
+	//DOREPLIFETIME(AABFountain, BigData);
+	DOREPLIFETIME(AABFountain, ServerLightColor);
 }
 
-void AABFountain::OnActorChannelOpen(class FInBunch& InBunch, class UNetConnection* Connection) // Connection에서 Bunch정보를 해석해 어떤 리플리 케이션을 작업하여 수행하는지 알려주는 것. (서버와의 포탈이 열렸다?)
+void AABFountain::OnActorChannelOpen(FInBunch& InBunch, UNetConnection* Connection)
 {
 	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin"));
-	
-	Super::OnActorChannelOpen(InBunch, Connection); // 플레이어 컨트롤러나 특별한 부분들은 이 함수를 재정의해서 사용.
-	
+
+	Super::OnActorChannelOpen(InBunch, Connection);
+
 	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
 }
 
 bool AABFountain::IsNetRelevantFor(const AActor* RealViewer, const AActor* ViewTarget, const FVector& SrcLocation) const
 {
-	bool NetRelevantFor = Super::IsNetRelevantFor(RealViewer, ViewTarget, SrcLocation); // 기본 네트워크 관련성 확인
-	if (!NetRelevantFor)
+	bool NetRelevantResult = Super::IsNetRelevantFor(RealViewer, ViewTarget, SrcLocation);
+	if (!NetRelevantResult)
 	{
-		AB_LOG(LogABNetwork, Log, TEXT("Not Relevant:[%s] %s"), *RealViewer->GetName(), *SrcLocation.ToCompactString()); // 네트워크 관련성이 없는 경우 로그 출력
+		AB_LOG(LogABNetwork, Log, TEXT("Not Relevant:[%s] %s"), *RealViewer->GetName(), *SrcLocation.ToCompactString());
 	}
-	
-	return false; // 항상 비관련으로 설정 (이 액터는 네트워크 관련성이 없음)
+
+	return NetRelevantResult;
 }
 
-void AABFountain::OnRep_ServerRotationYaw() // 동적 액터는 이런 식으로 RepNotify 콜백 함수를 구현해야함.
+void AABFountain::PreReplication(IRepChangedPropertyTracker& ChangedPropertyTracker)
 {
-	AB_LOG(LogABNetwork, Log, TEXT("YAW : %f"), ServerRotationYaw); // RepNotify 콜백 함수 구현 (서버에서 클라이언트로 값이 복제될 때마다 호출됨)
-	
+	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin"));
+	Super::PreReplication(ChangedPropertyTracker);
+}
+
+void AABFountain::OnRep_ServerRotationYaw()
+{
+	//AB_LOG(LogABNetwork, Log, TEXT("Yaw : %f"), ServerRotationYaw);
+
 	FRotator NewRotator = RootComponent->GetComponentRotation();
 	NewRotator.Yaw = ServerRotationYaw;
 	RootComponent->SetWorldRotation(NewRotator);
-	
-	ClientTimeBetweenLastUpdate = ClientTimeSinceUpdate; // 마지막 업데이트 이후 경과한 시간을 이전 업데이트 간격으로 저장
-	ClientTimeSinceUpdate = 0.0f; // 경과 시간 초기화
+
+	ClientTimeBetweenLastUpdate = ClientTimeSinceUpdate;
+	ClientTimeSinceUpdate = 0.0f;
+}
+
+void AABFountain::OnRep_ServerLightColor()
+{
+	if (!HasAuthority())
+	{
+		AB_LOG(LogABNetwork, Log, TEXT("LightColor : %s"), *ServerLightColor.ToString());
+	}
+
+	UPointLightComponent* PointLight = Cast<UPointLightComponent>(GetComponentByClass(UPointLightComponent::StaticClass()));
+	if (PointLight)
+	{
+		PointLight->SetLightColor(ServerLightColor);
+	}
 }
 

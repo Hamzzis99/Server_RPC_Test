@@ -8,7 +8,6 @@
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Physics/ABCollision.h"
 #include "DrawDebugHelpers.h"
-#include "Engine/OverlapResult.h"
 
 UBTService_Detect::UBTService_Detect()
 {

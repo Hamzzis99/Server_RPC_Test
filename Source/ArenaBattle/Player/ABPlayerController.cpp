@@ -18,55 +18,54 @@ AABPlayerController::AABPlayerController()
 	}
 }
 
-void AABPlayerController::PostInitializeComponents() // 네트워크와 무관하게 액터를 초기화 할 때 사용하는 것.
+void AABPlayerController::PostInitializeComponents()
 {
-	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin")); // 비긴 플레이가 실행되기 전에 이게 왜 나와?
-	
-	Super::PostInitializeComponents(); // 상위 클래스에 있는 대부분의 로직? 코딩 방식이 이상한데? 아, 오버라이드지 당연히 Super::니까
+	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin"));
+
+	Super::PostInitializeComponents();
 
 	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
 }
 
-void AABPlayerController::PostNetInit() // 원격 클라이언트로 초기화에 필요한 정보를 초기화 할 때 호출되는 것.
+void AABPlayerController::PostNetInit()
 {
-	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin")); // 비긴 플레이가 실행되기 전에 이게 왜 나와?
-	
-	Super::PostNetInit(); // 상위 클래스에 있는 대부분의 로직? 코딩 방식이 이상한데? 아, 오버라이드지 당연히 Super::니까
+	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin"));
+
+	Super::PostNetInit();
 
 	UNetDriver* NetDriver = GetNetDriver();
-	
 	if (NetDriver)
 	{
-		if (NetDriver -> ServerConnection)
+		if (NetDriver->ServerConnection)
 		{
-			AB_LOG(LogABNetwork, Log, TEXT("Server Connection(서버 커넥션): %s"), *NetDriver->ServerConnection->GetName());
+			AB_LOG(LogABNetwork, Log, TEXT("Server Connection: %s"), *NetDriver->ServerConnection->GetName());
 		}
 	}
 	else
 	{
-		AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("No NetDriver (넷드라이바 존재 없음)"));
+		AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("No NetDriver"));
 	}
-	
+
 	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
 }
 
 void AABPlayerController::BeginPlay()
 {
-	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin")); // 비긴 플레이가 실행되기 전에 이게 왜 나와?
-	
-	Super::BeginPlay(); // 상위 클래스에 있는 대부분의 로직? 코딩 방식이 이상한데? 아, 오버라이드지 당연히 Super::니까
+	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin"));
+
+	Super::BeginPlay();
 
 	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
-	
+
 	FInputModeGameOnly GameOnlyInputMode;
 	SetInputMode(GameOnlyInputMode);
 }
 
 void AABPlayerController::OnPossess(APawn* InPawn)
 {
-	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin")); // 비긴 플레이가 실행되기 전에 이게 왜 나와?
-	
+	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin"));
+
 	Super::OnPossess(InPawn);
-	
+
 	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
 }

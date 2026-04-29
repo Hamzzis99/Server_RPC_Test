@@ -8,10 +8,10 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "ABCharacterControlData.h"
-#include "ArenaBattle.h"
 #include "UI/ABHUDWidget.h"
 #include "CharacterStat/ABCharacterStatComponent.h"
 #include "Interface/ABGameInterface.h"
+#include "ArenaBattle.h"
 
 AABCharacterPlayer::AABCharacterPlayer()
 {
@@ -89,11 +89,9 @@ void AABCharacterPlayer::SetDead()
 	}
 }
 
-//멀티플레이 과정 캐릭터 빙의 보이기.
-// 출력 예시 : LogABNetwork: [LISTENSERVER] AABCharacterPlayer::PossessedBy Owner : BP_ABPlayerController_C_0
 void AABCharacterPlayer::PossessedBy(AController* NewController)
 {
-	AB_LOG(LogABNetwork, Log, TEXT("%s %s"), TEXT("Begin"), *GetName());
+	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("Begin"));
 	AActor* OwnerActor = GetOwner();
 	if (OwnerActor)
 	{
@@ -116,17 +114,26 @@ void AABCharacterPlayer::PossessedBy(AController* NewController)
 		AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("No Owner"));
 	}
 
-	AB_LOG(LogABNetwork, Log, TEXT("%s %s"), TEXT("End"), *GetName());
-
+	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
 }
 
 void AABCharacterPlayer::OnRep_Owner()
 {
 	AB_LOG(LogABNetwork, Log, TEXT("%s %s"), *GetName(), TEXT("Begin"));
 
-	Super::OnRep_Owner();
+	Super::PostNetInit();
 
-	AB_LOG(LogABNetwork, Log, TEXT("%s %s"), TEXT("End"), *GetName());
+	AActor* OwnerActor = GetOwner();
+	if (OwnerActor)
+	{
+		AB_LOG(LogABNetwork, Log, TEXT("Owner : %s"), *OwnerActor->GetName());
+	}
+	else
+	{
+		AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("No Owner"));
+	}
+
+	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
 }
 
 void AABCharacterPlayer::PostNetInit()
@@ -137,7 +144,6 @@ void AABCharacterPlayer::PostNetInit()
 
 	AB_LOG(LogABNetwork, Log, TEXT("%s"), TEXT("End"));
 }
-
 
 void AABCharacterPlayer::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {

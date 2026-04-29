@@ -7,7 +7,7 @@
 #include "Physics/ABCollision.h"
 #include "Character/ABCharacterNonPlayer.h"
 #include "Item/ABItemBox.h"
-#include "Engine/OverlapResult.h"
+#include "Interface/ABGameInterface.h"
 
 // Sets default values
 AABStageGimmick::AABStageGimmick()
